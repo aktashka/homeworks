@@ -1,4 +1,4 @@
-var products = [{
+const products = [{
         productName: 'milk',
         cost: 48,
         category: 'food'
@@ -36,7 +36,7 @@ var products = [{
 ]
 
 function filter() {
-    var filtered = products.filter(product => {
+    const filtered = products.filter(product => {
         if (product.category === 'food') {
             return true
         } else if (product.category === 'tool')
@@ -46,18 +46,12 @@ function filter() {
 }
 filter()
 
+
 function clear() {
-    var cleaned = products.map(clean => {
+    const cleaned = products.map(clean => {
         return `${clean.productName}`
     })
     console.log(cleaned)
 }
 
 clear()
-
-// var categories = products.reduce((product, item) => {
-//     product.category[item] 
-//     return product
-// }, 0)
-
-// console.log(categories)

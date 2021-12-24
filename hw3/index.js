@@ -12,17 +12,28 @@ function count(symb, str) {
 }
 console.log(count(symb, str))
 
-function getMin(arr) {
-    var min = arr[0]
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] < min) {
-            min = arr[i]
-        }
-    }
+// ES6
+function getMin() {
+    const min = Math.min.apply(Math, arguments)
     return console.log(min)
 }
-getMin([1, 2, 3, 4, 5]) // 1
-getMin([75, 32, 1221, 43]) // 32
+
+getMin(...[1, 2, 3, 4, 5]) // 1
+getMin(...[75, 32, 1221, 43]) // 32
+
+// ES5
+// function getMin(arr) {
+    //     var min = arr[0]
+//     for (var i = 0; i < arr.length; i++) {
+    //         if (arr[i] < min) {
+//             min = arr[i]
+//         }
+//     }
+//     return console.log(min)
+// }
+
+
+
 
 var products = [{
         productName: 'milk',
@@ -68,17 +79,21 @@ function getCategory(category) {
         }
     }
 }
-var tool = getCategory('food')
+const tool = getCategory('food')
 
-
-
-function getProduct(productName) {
-    function callback(product) {
-        if (product.productName === productName) return true
-    }
-    var foundProduct = products.find(callback)
-    return foundProduct
+function expenFind () {
+    const max = Math.max.apply(null, products.map(item => item.cost))
+    return console.log(max)
 }
+expenFind()
 
-var found = getProduct('bag')
-console.log(found)
+// function getProduct(productName) {
+//     function callback(product) {
+//         if (product.productName === productName) return true
+//     }
+//     var foundProduct = products.find(callback)
+//     return foundProduct
+// }
+
+// const found = getProduct('bag')
+// console.log(found)
