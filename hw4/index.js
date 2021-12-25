@@ -36,10 +36,11 @@ const products = [{
 ]
 
 function filter() {
-    const filtered = products.filter(product => {
-        if (product.category === 'food') {
+    // можно было впихнуть деструктуризацию здесь:
+    const filtered = products.filter(({ category }) => {
+        if (category === 'food') {
             return true
-        } else if (product.category === 'tool')
+        } else if (category === 'tool')
             return true
     })
     console.log(filtered)
@@ -48,8 +49,9 @@ filter()
 
 
 function clear() {
-    const cleaned = products.map(clean => {
-        return `${clean.productName}`
+    // и здесь
+    const cleaned = products.map(({ productName }) => {
+        return productName
     })
     console.log(cleaned)
 }
