@@ -6,7 +6,7 @@ if (num > number) {
     console.log('Первое число больше')
 } else if (num < number) {
     console.log('Второе число больше')
-} else if (num = number) {
+} else if (num === number) {
     console.log('Числа равны')
 }
 
