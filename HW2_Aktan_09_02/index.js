@@ -1,8 +1,9 @@
+// const ? Код не сработает, т.к. константе нельзя переопределять значение
 for (const star = "*"; star.length < 8; star += "*") {
     console.log(star)
 }
 
-
+// const ?
 const nums = 0
 while (nums < 100) {
     if (nums % 2 === 0) {
@@ -29,7 +30,7 @@ const people = [{
         salary: 15000
     }
 ]
-
+//  здесь тоже не сработает
 for (const i = 0; i < people.length; i++) {
     if (people[i].name === 'Nurdin') {
         people[i].salary += 2000
